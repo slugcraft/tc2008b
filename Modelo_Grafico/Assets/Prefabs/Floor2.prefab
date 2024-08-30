@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: roof-flat-center (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5803172255149971772, guid: 0e935287f141c1445be0ad1e3aeb3c11, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a7a7aa4db1552d499970bf3385ba622, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -177,6 +181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: roof-flat-center (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5803172255149971772, guid: 0e935287f141c1445be0ad1e3aeb3c11, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a7a7aa4db1552d499970bf3385ba622, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -239,6 +247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: roof-flat-center (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5803172255149971772, guid: 0e935287f141c1445be0ad1e3aeb3c11, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a7a7aa4db1552d499970bf3385ba622, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -301,6 +313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: roof-flat-center
       objectReference: {fileID: 0}
+    - target: {fileID: 5803172255149971772, guid: 0e935287f141c1445be0ad1e3aeb3c11, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a7a7aa4db1552d499970bf3385ba622, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
