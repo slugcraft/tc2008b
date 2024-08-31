@@ -6,7 +6,7 @@ using System.IO;
 
 public static class APIHelper
 {
-    public static Agent UpdateGame()
+    public static Turn UpdateGame()
     {
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.chucknorris.io/jokes/random");
 
@@ -16,6 +16,6 @@ public static class APIHelper
 
         string json = reader.ReadToEnd();
 
-        return JsonUtility.FromJson<Agent>(json);
+        return JsonUtility.FromJson<Turn>(json);
     }
 }
