@@ -15,4 +15,17 @@ public class NewBehaviourScript : MonoBehaviour
     {
         
     }
+
+    public void UpdateMap()
+    {
+        Turn Tablero = GameObject.Find("TurnManager").GetComponent<Connection>().Board;
+    }
+
+    public void CreateFire()
+    {
+        for(int i = 0; i < len(Tablero.Fire[1]); i++)
+        {
+
+        }
+    }
 }
