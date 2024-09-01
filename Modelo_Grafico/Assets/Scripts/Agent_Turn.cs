@@ -3,5 +3,5 @@ using System.Collections.Generic;
 
 public class AgentTurn
 {
-    Dictionary<string, List<int>> Pos = new Dictionary<string, List<int>>();
+    public Dictionary<string, List<int>> Pos = new Dictionary<string, List<int>>();
 }
