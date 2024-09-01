@@ -401,9 +401,12 @@
 "Assets/LowpolyDungeonAssets/Demo Scene/PostProcessing/Runtime/Utils/MaterialFactory.cs"
 "Assets/LowpolyDungeonAssets/Demo Scene/PostProcessing/Runtime/Utils/RenderTextureFactory.cs"
 "Assets/LowpolyDungeonAssets/Demo Scene/PostProcessing/Utilities/CustomMotionTexture/ExampleWheelController.cs"
+"Assets/Scripts/Agent_Turn.cs"
 "Assets/Scripts/APIHelper.cs"
+"Assets/Scripts/Connection.cs"
+"Assets/Scripts/POI.cs"
 "Assets/Scripts/Tablero.cs"
-"Assets/Scripts/Turno.cs"
+"Assets/Scripts/Turn.cs"
 -langversion:9.0
 /deterministic
 /optimize+
