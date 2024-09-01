@@ -15,7 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         
     }
-
+    /*
     public void UpdateMap()
     {
         Turn Tablero = GameObject.Find("TurnManager").GetComponent<Connection>().Board;
@@ -27,5 +27,5 @@ public class NewBehaviourScript : MonoBehaviour
         {
 
         }
-    }
+    }*/
 }
