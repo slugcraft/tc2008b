@@ -376,6 +376,26 @@ PrefabInstance:
       value: Particle System
       objectReference: {fileID: 0}
     - target: {fileID: 5404218783414980319, guid: 6c49791225bcb6440801e2ec29f6c2e3, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.ctime1
+      value: 31997
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404218783414980319, guid: 6c49791225bcb6440801e2ec29f6c2e3, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.b
+      value: 0.9229326
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404218783414980319, guid: 6c49791225bcb6440801e2ec29f6c2e3, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.g
+      value: 0.9559748
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404218783414980319, guid: 6c49791225bcb6440801e2ec29f6c2e3, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.r
+      value: 0.387801
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404218783414980319, guid: 6c49791225bcb6440801e2ec29f6c2e3, type: 3}
+      propertyPath: InitialModule.startColor.minGradient.ctime0
+      value: 25186
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404218783414980319, guid: 6c49791225bcb6440801e2ec29f6c2e3, type: 3}
       propertyPath: InitialModule.startColor.minGradient.key0.b
       value: 0.80113655
       objectReference: {fileID: 0}
@@ -385,15 +405,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5404218783414980319, guid: 6c49791225bcb6440801e2ec29f6c2e3, type: 3}
       propertyPath: InitialModule.startColor.minGradient.key1.b
-      value: 0.93710685
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5404218783414980319, guid: 6c49791225bcb6440801e2ec29f6c2e3, type: 3}
       propertyPath: InitialModule.startColor.minGradient.key1.g
-      value: 0.23869693
+      value: 0.13521993
       objectReference: {fileID: 0}
     - target: {fileID: 5404218783414980319, guid: 6c49791225bcb6440801e2ec29f6c2e3, type: 3}
       propertyPath: InitialModule.startColor.minGradient.key1.r
-      value: 0.27575526
+      value: 0.17894486
       objectReference: {fileID: 0}
     - target: {fileID: 8720867025784814453, guid: 6c49791225bcb6440801e2ec29f6c2e3, type: 3}
       propertyPath: m_LocalPosition.x

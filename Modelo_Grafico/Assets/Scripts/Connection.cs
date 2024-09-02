@@ -1,7 +1,7 @@
 // TC2008B Modelación de Sistemas Multiagentes con gráficas computacionales
 // C# client to interact with Python server via POST
 // Sergio Ruiz-Loza, Ph.D. March 2021
-
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -10,8 +10,8 @@ using UnityEngine.Networking;
 
 public class WebClient : MonoBehaviour
 {
-    Turn Board;
-    AgentTurn Agents;
+    public Turn Board;
+    public AgentTurn Agents;
     // IEnumerator - yield return
     IEnumerator SendData(string data/*, Turn Board, Agent_Turn Agents*/)
     {
@@ -34,16 +34,17 @@ public class WebClient : MonoBehaviour
             else
             {
                 string responseText = www.downloadHandler.text;
-                Debug.Log(www.downloadHandler.text);    // Answer from Python
+                //Debug.Log(www.downloadHandler.text);    // Answer from Python
                 string[] jsonParts = responseText.Split('\n');
+                Debug.Log(jsonParts[0]);
+                Debug.Log(jsonParts[1]);
 
-                Agents = JsonUtility.FromJson<AgentTurn>(jsonParts[0].Replace('\'', '\"'));
-                //Debug.Log("Agentes " + Agents);
+                Agents = JsonConvert.DeserializeObject<AgentTurn>(jsonParts[0]);
 
                 // Deserialize the second JSON into a custom object or another type
                 // Example: Let's assume it's another Vector3 for simplicity
-                Board = JsonUtility.FromJson<Turn>(jsonParts[1].Replace('\'', '\"'));
-                //Debug.Log("Tablero " + Tablero);
+                Board = JsonConvert.DeserializeObject<Turn>(jsonParts[1]);
+                Debug.Log(Board.Fire["0"]);
             }
         }
 
@@ -63,6 +64,15 @@ public class WebClient : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        /*
+        foreach (var list in Board.Fire["0"])
+        {
+            string listContents = "Lista: ";
+            foreach (var item in list)
+            {
+                listContents += item + " ";
+            }
+            Debug.Log(listContents);
+        }*/
     }
 }
