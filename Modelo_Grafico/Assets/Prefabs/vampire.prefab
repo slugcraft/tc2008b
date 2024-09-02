@@ -93,8 +93,8 @@ Animation:
   m_Animation: {fileID: -5252816984213320552, guid: 1fdd24e0dbc156946b066930ceeba5f5, type: 3}
   m_Animations:
   - {fileID: -5252816984213320552, guid: 1fdd24e0dbc156946b066930ceeba5f5, type: 3}
-  - {fileID: -5455075036266976943, guid: b4df3749e21336c4db411b169146563e, type: 3}
-  m_WrapMode: 2
+  - {fileID: -5455075036266976943, guid: 1fdd24e0dbc156946b066930ceeba5f5, type: 3}
+  m_WrapMode: 1
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0

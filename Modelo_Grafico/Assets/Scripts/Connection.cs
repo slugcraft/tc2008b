@@ -1,4 +1,4 @@
-// TC2008B Modelación de Sistemas Multiagentes con gráficas computacionales
+// TC2008B Modelaciï¿½n de Sistemas Multiagentes con grï¿½ficas computacionales
 // C# client to interact with Python server via POST
 // Sergio Ruiz-Loza, Ph.D. March 2021
 using Newtonsoft.Json;
@@ -12,8 +12,9 @@ public class WebClient : MonoBehaviour
 {
     public Turn Board;
     public AgentTurn Agents;
+    public bool TurnAdvance = true;
     // IEnumerator - yield return
-    IEnumerator SendData(string data/*, Turn Board, Agent_Turn Agents*/)
+    IEnumerator SendData(string data)
     {
         WWWForm form = new WWWForm();
         form.AddField("bundle", "the data");
@@ -44,7 +45,9 @@ public class WebClient : MonoBehaviour
                 // Deserialize the second JSON into a custom object or another type
                 // Example: Let's assume it's another Vector3 for simplicity
                 Board = JsonConvert.DeserializeObject<Turn>(jsonParts[1]);
-                Debug.Log(Board.Fire["0"]);
+                //Debug.Log(Board.Fire["0"]);
+                GameObject.Find("BoardManager").GetComponent<Tablero>().BoardTurn = true;
+                TurnAdvance = false;
             }
         }
 
@@ -54,25 +57,18 @@ public class WebClient : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //string call = "What's up?";
-        Vector3 fakePos = new Vector3(3.44f, 0, -15.707f);
-        string json = EditorJsonUtility.ToJson(fakePos);
-        //StartCoroutine(SendData(call));
-        StartCoroutine(SendData(json));
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        foreach (var list in Board.Fire["0"])
+        if(TurnAdvance)
         {
-            string listContents = "Lista: ";
-            foreach (var item in list)
-            {
-                listContents += item + " ";
-            }
-            Debug.Log(listContents);
-        }*/
+            Vector3 fakePos = new Vector3(3.44f, 0, -15.707f);
+            string json = EditorJsonUtility.ToJson(fakePos);
+            //StartCoroutine(SendData(call));
+            StartCoroutine(SendData(json));
+        }
     }
 }

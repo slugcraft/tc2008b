@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class POI
 {
-    public int[] Coordinates;
+    public List<int> Coordinates;
     public bool victim;
 }
