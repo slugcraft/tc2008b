@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c7a6f4c0336a478448d880236528e262, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.8018026
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c7a6f4c0336a478448d880236528e262, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c7a6f4c0336a478448d880236528e262, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.684269
+      value: 14.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c7a6f4c0336a478448d880236528e262, type: 3}
       propertyPath: m_LocalRotation.w
@@ -75,6 +75,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c7a6f4c0336a478448d880236528e262, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7488649985399227912}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c7a6f4c0336a478448d880236528e262, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8221172549165704302}
   m_SourcePrefab: {fileID: 100100000, guid: c7a6f4c0336a478448d880236528e262, type: 3}
 --- !u!1 &7422246407433553663 stripped
 GameObject:
@@ -100,3 +103,19 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &8221172549165704302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7422246407433553663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ca567ed1512d9468395e256900f3a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hounter: {fileID: 7422246407433553663}
+  moveSpeed: 2
+  idleAnimation: {fileID: 0}
+  walkAnimation: {fileID: 0}

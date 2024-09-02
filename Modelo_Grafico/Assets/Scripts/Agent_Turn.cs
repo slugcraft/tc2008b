@@ -1,7 +1,8 @@
 using System.Collections.Generic;
-[System.Serializable]
+using System.Diagnostics;
 
 public class AgentTurn
 {
-    Dictionary<string, List<int>> Pos = new Dictionary<string, List<int>>();
+    public Dictionary<string, List<int>> Pos = new Dictionary<string, List<int>>();
+    
 }
