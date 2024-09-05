@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638608157667855002
-    m_Hash: 3038615386
+      ticks: 638609162729854852
+    m_Hash: 2223526315
   m_LockFileStatus:
     m_FilePath: C:/Users/Emiva/Documents/Quinto Semestre/tc2008b/Modelo_Grafico/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638608157667888695
-    m_Hash: 362081244
+      ticks: 638609162729884851
+    m_Hash: 3897721021
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

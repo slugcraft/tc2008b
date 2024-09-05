@@ -123,6 +123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candle_Group_B
       objectReference: {fileID: 0}
+    - target: {fileID: 6269570538038350253, guid: ea849c3f31297b342a05c44d4f0ccc62, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -637,6 +641,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6786306203257435230}
     m_Modifications:
+    - target: {fileID: 640093135744832602, guid: 6c614c98192c964489b8f234f55f4c80, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1380909406383495079, guid: 6c614c98192c964489b8f234f55f4c80, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -1211,6 +1219,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6786306203257435230}
     m_Modifications:
+    - target: {fileID: -8324642940806817663, guid: 52d7cfb6572391e488c86985e8f073ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7436960334708570114, guid: 52d7cfb6572391e488c86985e8f073ae, type: 3}
       propertyPath: m_Name
       value: Skeleton head

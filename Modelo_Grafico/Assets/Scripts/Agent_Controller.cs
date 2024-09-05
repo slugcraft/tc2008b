@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class AgentController : MonoBehaviour
 {
     public AgentTurn agentData;
     public GameObject hounter;
-    public float moveSpeed = 2.0f;
+    public float moveSpeed = 0.5f;
+    public int turno = 0;
+    public int agente = 0;
 
     // Clips de animacion
     public AnimationClip idleAnimation;
@@ -13,65 +16,56 @@ public class AgentController : MonoBehaviour
 
     private Animation anim; // Referencia al componente Animation
     private Vector3 targetPosition;
+    public string clave => $"({turno}, {agente})";
 
     void Start()
     {
-        // Inicializar la animaci�n
+        // Inicializar la animacion
         anim = hounter.GetComponent<Animation>();
 
         // Asignar los clips al componente Animation
         anim.AddClip(idleAnimation, "idle");
         anim.AddClip(walkAnimation, "walk");
 
-        // Reproducir la animaci�n de "idle" al inicio
+        // Reproducir la animacion de "idle" al inicio
         anim.Play("idle");
 
-        // Inicializar la posici�n objetivo
+        // Inicializar la posicion objetivo
         targetPosition = hounter.transform.position;
     }
 
     void Update()
     {
-        updateAgent();
-        ApplyAgentData("(0, 0)");
-
-        // Comprobar si el hounter se est� moviendo
-        if (Vector3.Distance(hounter.transform.position, targetPosition) > 0.001f)
-        {
-            if (!anim.IsPlaying("walk"))
-            {
-                Debug.Log("Transicion a la animacion 'walk'");
-                anim.CrossFade("walk"); // Cambia a la animaci�n de caminar
-            }
-        }
-        else
-        {
-            hounter.transform.position = targetPosition;
-            if (!anim.IsPlaying("idle"))
-            {
-                Debug.Log("Transicion a la animacion 'idle'");
-                anim.CrossFade("idle");
-            }
-        }
+        StartCoroutine(ExecuteAgentRoutine(clave));
     }
 
-    public void updateAgent()
+    public void updateAgent() //Actualiza los datos del agente a partir de lo recibido desde el servidor
     {
         agentData = GameObject.Find("TurnManager").GetComponent<WebClient>().Agents;
     }
 
-    // M�todo para aplicar la posici�n desde AgentTurn
-    public void ApplyAgentData(string key)
+    public IEnumerator ApplyAgentData(string key) //Corrutina que mueve al agente a la posicion actualizada y ejecuta sus animaciones
     {
+        updateAgent();
+        
         if (agentData != null)
         {
             List<int> positionList = agentData.Pos[key];
-            Debug.Log(positionList);
             if (positionList != null && positionList.Count == 2)
             {
-                // Convierte los valores [x, y] en un Vector3
-                targetPosition = new Vector3(positionList[1] * 3, 0.1f, 14.5f - positionList[0] * 3);
-                hounter.transform.position = Vector3.MoveTowards(hounter.transform.position, targetPosition, moveSpeed * Time.deltaTime);
+                targetPosition = new Vector3(3.5f + positionList[1] * 3, 0.1f, 14.5f - positionList[0] * 3);
+                
+                // Iniciar la animación de caminar
+                anim.CrossFade("walk");
+                while (Vector3.Distance(hounter.transform.position, targetPosition) > 0.001f)
+                {
+                    hounter.transform.position = Vector3.MoveTowards(hounter.transform.position, targetPosition, moveSpeed * Time.deltaTime);
+                    yield return null; // Esperar al siguiente frame
+                }
+
+                // Una vez alcanzada la posición, cambiar a la animación de idle
+                anim.CrossFade("idle");
+                yield return new WaitForSeconds(idleAnimation.length); // Esperar a que termine la animación de idle
             }
             else
             {
@@ -80,7 +74,16 @@ public class AgentController : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("AgentTurn no esta asignado.");
+            Debug.LogWarning("AgentTurn no está asignado.");
         }
+    }
+
+    public IEnumerator ExecuteAgentRoutine(string key)
+    {
+        yield return StartCoroutine(ApplyAgentData(key));
+        // Esperar un tiempo entre animaciones
+        yield return new WaitForSeconds(0.3f);
+        this.enabled = false;
+        // Se desactiva el script para dejar al agente quieto hasta que su turno llegue
     }
 }

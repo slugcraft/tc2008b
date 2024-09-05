@@ -402,16 +402,20 @@
 "Assets/LowpolyDungeonAssets/Demo Scene/PostProcessing/Runtime/Utils/MaterialFactory.cs"
 "Assets/LowpolyDungeonAssets/Demo Scene/PostProcessing/Runtime/Utils/RenderTextureFactory.cs"
 "Assets/LowpolyDungeonAssets/Demo Scene/PostProcessing/Utilities/CustomMotionTexture/ExampleWheelController.cs"
+"Assets/Scripts/AgentHub.cs"
 "Assets/Scripts/Agent_Controller.cs"
-"Assets/Scripts/Agent_Hub.cs"
 "Assets/Scripts/Agent_Turn.cs"
-"Assets/Scripts/APIHelper.cs"
 "Assets/Scripts/Camara_Controller.cs"
 "Assets/Scripts/Connection.cs"
+"Assets/Scripts/DamageUI.cs"
+"Assets/Scripts/FAController.cs"
+"Assets/Scripts/GameOverScreen.cs"
 "Assets/Scripts/Player_Controller.cs"
-"Assets/Scripts/POI.cs"
+"Assets/Scripts/POIController.cs"
+"Assets/Scripts/PopUp.cs"
 "Assets/Scripts/Tablero.cs"
 "Assets/Scripts/Turn.cs"
+"Assets/Scripts/VictimController.cs"
 -langversion:9.0
 /deterministic
 /optimize+

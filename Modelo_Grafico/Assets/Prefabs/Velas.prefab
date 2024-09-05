@@ -98,6 +98,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candle_Group_B
       objectReference: {fileID: 0}
+    - target: {fileID: 6269570538038350253, guid: ea849c3f31297b342a05c44d4f0ccc62, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -116,6 +120,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5561911840084828051}
     m_Modifications:
+    - target: {fileID: 1449614107287657527, guid: 97718a386a494f64f9bbea4b62581a79, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7469176924089565559, guid: 97718a386a494f64f9bbea4b62581a79, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -190,6 +198,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5561911840084828051}
     m_Modifications:
+    - target: {fileID: 5918823020155941342, guid: 9ab100afff737d84f8a9bc394de613f4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6275929066778676279, guid: 9ab100afff737d84f8a9bc394de613f4, type: 3}
       propertyPath: m_Name
       value: Candle_Group_A

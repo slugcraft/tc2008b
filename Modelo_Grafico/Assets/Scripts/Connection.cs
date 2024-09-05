@@ -10,12 +10,14 @@ using UnityEngine.Networking;
 
 public class WebClient : MonoBehaviour
 {
+    //Recupera datos del servidor y los almacena en objetos
     public Turn Board;
     public AgentTurn Agents;
     public bool TurnAdvance = true;
     // IEnumerator - yield return
     IEnumerator SendData(string data)
     {
+        TurnAdvance = false;
         WWWForm form = new WWWForm();
         form.AddField("bundle", "the data");
         string url = "http://localhost:8585";
@@ -35,19 +37,16 @@ public class WebClient : MonoBehaviour
             else
             {
                 string responseText = www.downloadHandler.text;
-                //Debug.Log(www.downloadHandler.text);    // Answer from Python
-                string[] jsonParts = responseText.Split('\n');
+                Debug.Log(www.downloadHandler.text);    // Answer from Python
+                string[] jsonParts = responseText.Split('\n'); //Al recibir varios json, los divide y almacena en un arreglo
                 Debug.Log(jsonParts[0]);
                 Debug.Log(jsonParts[1]);
 
-                Agents = JsonConvert.DeserializeObject<AgentTurn>(jsonParts[0]);
+                //Cada parte del arreglo de json se almacena para representar diferente información
 
-                // Deserialize the second JSON into a custom object or another type
-                // Example: Let's assume it's another Vector3 for simplicity
+                Agents = JsonConvert.DeserializeObject<AgentTurn>(jsonParts[0]);
                 Board = JsonConvert.DeserializeObject<Turn>(jsonParts[1]);
-                //Debug.Log(Board.Fire["0"]);
-                GameObject.Find("BoardManager").GetComponent<Tablero>().BoardTurn = true;
-                TurnAdvance = false;
+                GameObject.Find("BoardManager").GetComponent<Tablero>().BoardTurn = true; //Indica al tablero que es su turno
             }
         }
 
@@ -67,7 +66,6 @@ public class WebClient : MonoBehaviour
         {
             Vector3 fakePos = new Vector3(3.44f, 0, -15.707f);
             string json = EditorJsonUtility.ToJson(fakePos);
-            //StartCoroutine(SendData(call));
             StartCoroutine(SendData(json));
         }
     }

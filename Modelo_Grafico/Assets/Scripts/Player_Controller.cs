@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Script para controlar a la cámara indirectamente a través de un jugador invisible
+
 public class Player_Controller : MonoBehaviour
 {
     public float speed = 10.0f;
